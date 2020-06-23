@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+  "env": {
+    "API_URL": "@ssr-server-movies-api-url",
+    "API_KEY_TOKEN": "@ssr-server-api-token",
+    "GOOGLE_CLIENT_ID": "@ssr-server-api-google-client-id",
+    "GOOGLE_CLIENT_SECRET": "@ssr-server-api-google-client-secret",
+    "TWITTER_CONSUMER_KEY": "@ssr-server-api-twitter-key",
+    "TWITTER_CONSUMER_SECRET": "@ssr-server-api-twitter-secret"
+  }
+}
