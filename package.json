@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "DEBUG=express:*,app:* nodemon index",
     "dev-win": "SET DEBUG=express:*,app:*&&nodemon index",
-    "start": "NODE_ENV=production node index"
+    "start": "NODE_ENV=production node index",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -24,10 +26,12 @@
     "passport-google-oauth": "^2.0.0",
     "passport-http": "^0.3.0",
     "passport-oauth": "^1.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "snyk": "^1.348.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
     "now": "^19.1.1"
-  }
+  },
+  "snyk": true
 }
