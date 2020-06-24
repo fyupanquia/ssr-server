@@ -15,8 +15,6 @@ passport.use(
       includeEmail: true,
     },
     async function (token, tokenSecret, profile, cb) {
-
-        console.log(profile,'<<<<<');
       const { data, status } = await axios({
         url: `${config.apiUrl}/api/auth/sign-provider`,
         method: "post",
