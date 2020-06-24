@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: config.facebookClientId,
       clientSecret: config.facebookClientSecret,
-      callbackURL: "http://localhost:8000/auth/facebook/callback",
+      callbackURL: "/auth/facebook/callback",
       profileFields: ["id", "displayName", "photos", "email"],
     },
     async function (accessToken, refreshToken, { _json: profile }, cb) {
