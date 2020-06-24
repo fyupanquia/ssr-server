@@ -112,7 +112,7 @@ app.delete("/user-movies/:userMovieId", async function (req, res, next) {
 });
 
 
-/*
+
 // custom strategy
 app.get(
   "/auth/google-oauth",
@@ -139,8 +139,6 @@ app.get(
     res.status(200).json(user);
   }
 );
-*/
-
 
 // google strategy
 app.get(
