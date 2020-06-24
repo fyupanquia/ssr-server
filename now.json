@@ -18,6 +18,8 @@
     "GOOGLE_CLIENT_ID": "@ssr-server-api-google-client-id",
     "GOOGLE_CLIENT_SECRET": "@ssr-server-api-google-client-secret",
     "TWITTER_CONSUMER_KEY": "@ssr-server-api-twitter-key",
-    "TWITTER_CONSUMER_SECRET": "@ssr-server-api-twitter-secret"
+    "TWITTER_CONSUMER_SECRET": "@ssr-server-api-twitter-secret",
+    "FACEBOOK_CLIENT_ID": "@ssr-server-api-facebook-id",
+    "FACEBOOK_CLIENT_SECRET": "@ssr-server-api-facebook-secret"
   }
 }

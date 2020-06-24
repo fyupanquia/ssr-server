@@ -16,6 +16,7 @@ app.use(cookieParser());
 require("./utils/auth/strategies/basic");
 require("./utils/auth/strategies/google");
 require("./utils/auth/strategies/twitter");
+require("./utils/auth/strategies/facebook");
 
 // OAuth strategy
 require("./utils/auth/strategies/oauth");
@@ -188,6 +189,32 @@ app.get(
   }
 );
 
+
+app.get(
+  "/auth/facebook",
+  passport.authenticate("facebook", {
+    scope: ["email"],
+  })
+);
+
+app.get(
+  "/auth/facebook/callback",
+  passport.authenticate("facebook", { session: false }),
+  function (req, res, next) {
+    if (!req.user) {
+      next(boom.unauthorized());
+    }
+
+    const { token, ...user } = req.user;
+
+    res.cookie("token", token, {
+      httpOnly: !config.dev,
+      secure: !config.dev,
+    });
+
+    res.status(200).json(user);
+  }
+);
 
 app.listen(config.port, function () {
   console.log(`Listening http://localhost:${config.port}`);
